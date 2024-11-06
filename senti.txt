@@ -1,0 +1,26 @@
+def analyze_sentiment(text, positive_words, negative_words):
+    positive_score = 0
+    negative_score = 0
+
+    words = text.split()
+
+    for word in words:
+      if word in positive_words:
+        positive_score += 1
+      elif word in negative_words:
+        negative_score += 1
+
+    if positive_score > negative_score:
+        return "positive"
+    elif negative_score > positive_score:
+        return "negative"
+    else:
+        return "neutral"
+
+positive_words = {"चांगले", "उत्कृष्ट", "आनंदी", "सुंदर","महत्त्वपूर्ण","ओळखले"}
+negative_words = {"वाईट", "नकारात्मक", "दुःखी", "घृणित","धोका","स्फोट"}
+
+sent1 = "2010 मध्ये, NASA मधील प्लॅनेटरी डिफेन्स टीमने पृथ्वीजवळील 1 किमी रुंदीचे 90 टक्के लघुग्रह ओळखले आणि लॉग केले."
+sent2 = "2013 मध्ये रशियातील चेल्याबिन्स्क शहराच्या वर स्फोट झालेल्या 19-मीटर लघुग्रहामुळे 1,200 लोक जखमी झाले हे लक्षात घेता, हे मध्यम आकाराचे लघुग्रह पृथ्वीच्या कक्षेत प्रवेश केल्यास एक गंभीर धोका असेल."
+
+------------------------------------------------------------------
